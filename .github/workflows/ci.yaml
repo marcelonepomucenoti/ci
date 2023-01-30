@@ -25,8 +25,8 @@ jobs:
         uses: docker/setup-buildx-action@v2
       - name: Build and push
         id: docker_build
-        working-directory: ${{env.working-directory}}
         uses: docker/build-push-action@v4
         with:
+          context: ./src
           push: false
           tags: marcelonepomuceno/ci-with-go:latest
