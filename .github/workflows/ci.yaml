@@ -21,11 +21,14 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
+        working-directory: ${{env.working-directory}}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
+        working-directory: ${{env.working-directory}}
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v4
+        working-directory: ${{env.working-directory}}
         with:
           push: false
           tags: marcelonepomuceno/ci-with-go:latest
