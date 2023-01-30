@@ -14,4 +14,3 @@ jobs:
         working-directory: ${{env.working-directory}}
       - run: go run math.go
         working-directory: ${{env.working-directory}}
-        
